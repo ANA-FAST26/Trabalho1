@@ -6,12 +6,21 @@ public class Atleta {
 
 	private String pais;
 
-	public void adicionaMedalha(Medalha medalha) {
-
+	public Atleta(int numero, String nome, String pais){ //método construtor
+		this.numero = numero;
+		this.nome = nome;
+		this.pais = pais;
 	}
+	public int getNumero() {
+		return numero;
+	}
+	public String getNome() {
+		return nome;
+	}
+
+	public void adicionaMedalha(Medalha medalha) {}
 
 	public int consultaQuantidadeMedalhas() {
 		return 0;
 	}
-
 }
