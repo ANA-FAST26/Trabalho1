@@ -28,13 +28,13 @@ public class Medalheiro {
 
 	public ArrayList<Medalha> consultaMedalha(String modalidade) {
 		ArrayList<Medalha> auxMedalhas = new ArrayList<>();
-			if(!medalhas.isEmpty()) { //Verificando se o ArrayList de medalhas não esta vazio.
-				for (int i =0; i<medalhas.size(); i++){
-					if (medalhas.get(i).getModalidade().equals(modalidade)){
-						auxMedalhas.add(medalhas.get(i)); //Todas as medalhas que forem iguais a
-					}									 //modalidade passada por parametro, serão add a
-				}										//este ArrayList auxiliar do tipo Medalhas.
-			}
+		if(!medalhas.isEmpty()) { //Verificando se o ArrayList de medalhas não esta vazio.
+			for (int i =0; i<medalhas.size(); i++){
+				if (medalhas.get(i).getModalidade().equals(modalidade)){
+					auxMedalhas.add(medalhas.get(i)); //Todas as medalhas que forem iguais a
+				}									 //modalidade passada por parametro, serão add a
+			}										//este ArrayList auxiliar do tipo Medalhas.
+		}
 		return null;
 	}
 
