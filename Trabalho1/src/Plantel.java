@@ -7,7 +7,7 @@ public class Plantel {
 
 	public Plantel() {
 		atletas = new ArrayList<Atleta>();
-	}
+	} //construtor
 
 	public boolean cadastraAtleta(Atleta atleta){// Valida se o atleta existe e se for TRUE cadastra um atleta.
 		int numero = atleta.getNumero();
@@ -16,7 +16,6 @@ public class Plantel {
 		}
 		return false;
 	}
-
 	public Atleta consultaAtleta(String nome) {
 		//for (Atleta aux : atletas) {//Atleta aux serve para comparar o AUX com o valor do ArrayList -
 		for (int i = 0; i < atletas.size(); i++) {
@@ -26,7 +25,6 @@ public class Plantel {
 		}
 		return null;
 	}
-
 	public Atleta consultaAtleta(int numero) {
 		for (int i = 0; i < atletas.size(); i++) {
 			if (atletas.get(i).getNumero() == numero) {

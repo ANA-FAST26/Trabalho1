@@ -3,7 +3,8 @@ import java.util.ArrayList;
 
 public class Medalheiro {
 
-	private Collection<Medalha> medalha;
+	private ArrayList<Medalha> medalhas;
+//encapsulamento método	 tipo	nome da variável
 
 	public Medalheiro(){
 		medalhas = new ArrayList<>(); // Criei o ArrayList
@@ -16,7 +17,12 @@ public class Medalheiro {
 		return false;
 	}
 
-	public Medalha consultaMedalha(int codigo) {
+	public Medalha consultaMedalha(int codigo){
+		for (int i = 0; i < medalhas.size(); i++) { //Primeiro o nome da variavel e depois o .nomeDoMetodo();
+			if(medalhas.get(i).getCodigo()==codigo){
+				return medalhas.get(i);
+			}
+		}
 		return null;
 	}
 
