@@ -9,7 +9,11 @@ public class Plantel {
 		atletas = new ArrayList<Atleta>();
 	}
 
-	public boolean cadastraAtleta(Atleta atleta) {
+	public boolean cadastraAtleta(Atleta atleta){// Valida se o atleta existe e se for TRUE cadastra um atleta.
+		int numero = atleta.getNumero();
+		if(consultaAtleta(numero)==null){
+			return atletas.add(atleta); //Essa parte do cod. esta add o atleta ao ArrayList de ATLETAS.
+		}
 		return false;
 	}
 
@@ -24,11 +28,9 @@ public class Plantel {
 	}
 
 	public Atleta consultaAtleta(int numero) {
-
 		for (int i = 0; i < atletas.size(); i++) {
 			if (atletas.get(i).getNumero() == numero) {
 				return atletas.get(i);
-
 			}
 		}
 		return null;
