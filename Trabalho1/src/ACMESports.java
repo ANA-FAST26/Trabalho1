@@ -45,6 +45,7 @@ public class ACMESports {
 	}
 
 
+	// Método 1 para cadastrar um atleta.
 	private void cadastraAtleta() {
 		int numero;
 		String nome;
@@ -60,6 +61,48 @@ public class ACMESports {
 				System.out.println("1:" + numero +  "," + nome + "," + pais);
 			}
 			numero = entrada.nextInt();
+		}
+	}
+	// Método 2 para cadastrar uma medalha.
+	private void cadastraMedalhas() {
+		int codigo;
+		int tipo;
+		boolean individual;
+		String modalidade;
+		Medalha medalha;
+		codigo = entrada.nextInt();
+		while(codigo!=-1){
+			tipo = entrada.nextInt();
+			entrada.nextLine(); // Limpar o Buffer.
+			individual = entrada.nextBoolean();
+			entrada.nextLine(); // Limpar o Buffer.
+			modalidade = entrada.nextLine();
+			medalha = new Medalha(codigo, tipo, individual, modalidade);
+			if(medalheiro.cadastraMedalha(medalha)){
+				System.out.println("2:" + codigo + "," + tipo + "," + individual + "," + modalidade);
+			}
+			codigo = entrada.nextInt();
+		}
+	}
+
+	// Método 3 para atribuir uma medalha a um atleta e vice-versa.
+	private void cadastraMedalhasEAtletas() {
+
+	}
+
+	// Método 4 para mostrar um atleta pesquisando por número.
+	private void mostraAtletaPorNumero() {
+		int numero;
+		Atleta atleta; //variavel local
+		// Ler, significa que estamos recebendo um dado, seja por terminal ou por leitura de arquivos
+		// Ou seja, leitura está relacionada com o Scanner.
+		numero = entrada.nextInt();
+		entrada.nextLine();
+		atleta = plantel.consultaAtleta(numero);
+		if(atleta != null){
+			System.out.println("4:" + numero + "," + atleta.getNome() + "," + atleta.getPais());
+		}else{
+			System.out.println("4:Nenhum atleta encontrado.");
 		}
 	}
 }
