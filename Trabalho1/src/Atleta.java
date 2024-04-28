@@ -18,9 +18,13 @@ public class Atleta {
 		return nome;
 	}
 
+	public String getPais() { return pais; }
+
 	public void adicionaMedalha(Medalha medalha) {}
 
 	public int consultaQuantidadeMedalhas() {
 		return 0;
 	}
+
+
 }

@@ -9,6 +9,7 @@ public class Medalheiro {
 	public Medalheiro(){
 		medalhas = new ArrayList<>(); // Criei o ArrayList
 	}
+
 	public boolean cadastraMedalha(Medalha medalha) {
 		int codigo = medalha.getCodigo();
 		if(consultaMedalha(codigo)==null){

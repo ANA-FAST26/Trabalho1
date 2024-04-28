@@ -3,6 +3,8 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.PrintStream;
 import java.nio.charset.Charset;
+import java.sql.SQLOutput;
+import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -31,9 +33,9 @@ public class ACMESports {
 
 	public void executar() {
 		cadastraAtleta(); //1
-//		cadastraMedalhas(); //2
-//		cadastraMedalhasEAtletas(); //3
-//		mostraAtletaPorNumero(); //4
+		cadastraMedalhas(); //2
+		cadastraMedalhasEAtletas(); //3
+		mostraAtletaPorNumero(); //4
 //		mostraAtletaPorNome(); //5
 //		mostraMedalha(); //6
 //		mostraAtletaPorPais(); //7
@@ -41,6 +43,7 @@ public class ACMESports {
 //		mostraAtletaPorModalidade(); //9
 //		mostraAtletaComMaisMedalhas(); //10
 	}
+
 
 	private void cadastraAtleta() {
 		int numero;
@@ -56,7 +59,7 @@ public class ACMESports {
 			if(plantel.cadastraAtleta(atleta)){
 				System.out.println("1:" + numero +  "," + nome + "," + pais);
 			}
-		numero = entrada.nextInt();
+			numero = entrada.nextInt();
 		}
 	}
 }
