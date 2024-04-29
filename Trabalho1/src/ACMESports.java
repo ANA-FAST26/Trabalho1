@@ -105,4 +105,17 @@ public class ACMESports {
 			System.out.println("4:Nenhum atleta encontrado.");
 		}
 	}
+	// Método 5 mostra um atleta pesquisando por nome.
+	private void mostraAtletaPoNome(){
+		String nome;
+		Atleta atleta;
+		nome = entrada.nextLine();
+		entrada.nextLine();
+		atleta = plantel.consultaAtleta(nome);
+		if(atleta != null){
+			System.out.println("5:" + atleta.getNumero() + "," + atleta.getNome() + "," + atleta.getPais());
+		}else{
+			System.out.println("5:Nenhum atleta encontrado.");
+		}
+	}
 }
