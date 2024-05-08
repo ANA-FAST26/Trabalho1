@@ -6,3 +6,4 @@
 6:111,1,true,Salto em altura
 7:11,Maria da Silva,Brasil
 8:11,Maria da Silva,Brasil
+9:Salto em altura,1,Sem atletas com medalha.

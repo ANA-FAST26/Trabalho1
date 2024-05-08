@@ -33,6 +33,8 @@ public class Plantel {
 		}
 		return null;
 	}
+
+	//Método que retorna todos os atletas de um determinado país
 	public ArrayList<Atleta> consultaAtletas(String pais){
 		ArrayList<Atleta> auxAtletas = new ArrayList<>();
 		if(!atletas.isEmpty()){
@@ -45,6 +47,7 @@ public class Plantel {
 		}
 		return null;
 	}
+
 	public ArrayList<Atleta> consultaAtletasPorTipo(int tipo) {
 		ArrayList<Atleta> auxAtletas = new ArrayList<>();
 		if(!atletas.isEmpty()) {
@@ -57,7 +60,27 @@ public class Plantel {
 		}
 		return null;
 	}
+
+	public ArrayList<Atleta> consultaAtletasPorModalidade(String modalidade) {
+		ArrayList<Atleta> auxAtletas = new ArrayList<>();
+		if(!atletas.isEmpty()) { //Verificando se o ArrayList de medalhas não esta vazio.
+			for (int i =0; i<atletas.size(); i++){
+				if (atletas.get(i).getMedalhas().get(i).getModalidade().equals(modalidade)){
+					auxAtletas.add(atletas.get(i)); //Todas as medalhas que forem iguais a
+				}									 //modalidade passada por parametro, serão add a
+			}										//este ArrayList auxiliar do tipo Medalhas.
+			return auxAtletas;
+		}
+		return null;
+	}
+
+
+
+
+
+
 }
+
 
 //	public ArrayList<Atleta> consultaAtletas(String pais) {
 //		ArrayList<Atleta> auxAtletas = new ArrayList<>();

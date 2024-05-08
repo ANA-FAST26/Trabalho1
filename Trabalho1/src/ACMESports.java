@@ -159,8 +159,8 @@ public class ACMESports {
 		if (auxAtletas.isEmpty()){
 			System.out.println("7:Pais nao encontrado.");
 		}else{
-			for (Atleta aux:auxAtletas) {
-				System.out.println("7:" + aux.getNumero() + "," + aux.getNome() + "," + aux.getPais());
+			for (Atleta atleta1:auxAtletas) {
+				System.out.println("7:" + atleta1.getNumero() + "," + atleta1.getNome() + "," + atleta1.getPais());
 			}
 		}
 	}
@@ -170,22 +170,36 @@ public class ACMESports {
 		int tipo;
 		ArrayList<Atleta> auxAtletas;
 		tipo = entrada.nextInt();
+		entrada.nextLine();
 		auxAtletas = plantel.consultaAtletasPorTipo(tipo);
 		if (auxAtletas.isEmpty()){
 			System.out.println("8:Nenhum atleta encontrado.");
 		}else{
-			for (Atleta aux:auxAtletas) {
-				System.out.println("8:" + aux.getNumero() + "," + aux.getNome() + "," + aux.getPais());
+			for (Atleta atletaAux:auxAtletas) {
+				System.out.println("8:" + atletaAux.getNumero() + "," + atletaAux.getNome() + "," + atletaAux.getPais());
 			}
 		}
-
-
 	}
 
 	//Método 9 mostra atleta pesquisando por modalidade.
 	private void mostraAtletaPorModalidade() {
 		String modalidade;
-
+		ArrayList <Atleta> auxAtletas;
+		ArrayList <Medalha> auxMedalhas;
+		modalidade = entrada.nextLine();
+		auxAtletas = plantel.consultaAtletasPorModalidade(modalidade);
+		auxMedalhas = medalheiro.consultaMedalha(modalidade);
+		if(auxAtletas.isEmpty() && auxMedalhas.isEmpty()){
+			System.out.println("9:Modalidade não encontrada.");
+		}else if(!auxMedalhas.isEmpty()){
+			for(int i = 0; i< auxMedalhas.size(); i++) {
+				System.out.println("9:" + modalidade + "," + auxMedalhas.get(i).getTipo() + ",Sem atletas com medalha.");
+			}
+		}else{
+			for (int i = 0; i < auxAtletas.size(); i++) {
+				System.out.println("9:" + modalidade + "," + auxMedalhas.get(i).getTipo() + "," + auxAtletas.get(i).getNumero() + "," + auxAtletas.get(i).getNome() + "," + auxAtletas.get(i).getPais());
+			}
+		}
 	}
 }
 

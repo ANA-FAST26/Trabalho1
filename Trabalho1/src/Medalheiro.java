@@ -36,6 +36,7 @@ public class Medalheiro {
 					auxMedalhas.add(medalhas.get(i)); //Todas as medalhas que forem iguais a
 				}									 //modalidade passada por parametro, serão add a
 			}										//este ArrayList auxiliar do tipo Medalhas.
+			return auxMedalhas;
 		}
 		return null;
 	}
