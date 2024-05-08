@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Atleta {
 
 	private int numero;
@@ -6,11 +8,16 @@ public class Atleta {
 
 	private String pais;
 
+	private ArrayList<Medalha> medalhas;
+
 	public Atleta(int numero, String nome, String pais){ //método construtor
 		this.numero = numero;
 		this.nome = nome;
 		this.pais = pais;
+		medalhas = new ArrayList<Medalha>(10);
 	}
+
+
 	public int getNumero() {
 		return numero;
 	}
@@ -20,10 +27,16 @@ public class Atleta {
 
 	public String getPais() { return pais; }
 
-	public void adicionaMedalha(Medalha medalha) {}
+	public ArrayList<Medalha> getMedalhas() {
+		return medalhas;
+	}
+
+	public void adicionaMedalha(Medalha medalha) {
+		medalhas.add(medalha);
+	}
 
 	public int consultaQuantidadeMedalhas() {
-		return 0;
+		return medalhas.size();
 	}
 
 

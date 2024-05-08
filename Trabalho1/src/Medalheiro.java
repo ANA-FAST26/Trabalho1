@@ -17,15 +17,16 @@ public class Medalheiro {
 		}
 		return false;
 	}
+	//Primeiro o nome da variavel e depois o .nomeDoMetodo();
 
 	public Medalha consultaMedalha(int codigo){
-		for (int i = 0; i < medalhas.size(); i++) { //Primeiro o nome da variavel e depois o .nomeDoMetodo();
-			if(medalhas.get(i).getCodigo()==codigo){
-				return medalhas.get(i);
-			}
+		for (Medalha aux: medalhas) {
+		if(aux.getCodigo()==codigo){
+			return aux;
 		}
-		return null;
 	}
+		return null;
+}
 
 	public ArrayList<Medalha> consultaMedalha(String modalidade) {
 		ArrayList<Medalha> auxMedalhas = new ArrayList<>();
@@ -35,6 +36,15 @@ public class Medalheiro {
 					auxMedalhas.add(medalhas.get(i)); //Todas as medalhas que forem iguais a
 				}									 //modalidade passada por parametro, serão add a
 			}										//este ArrayList auxiliar do tipo Medalhas.
+		}
+		return null;
+	}
+
+	public Medalha consultaMedalhaPorTipo(int tipo){
+		for (Medalha aux: medalhas) {
+			if(aux.getCodigo()==tipo){
+				return aux;
+			}
 		}
 		return null;
 	}

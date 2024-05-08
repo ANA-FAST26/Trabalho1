@@ -17,21 +17,57 @@ public class Plantel {
 		return false;
 	}
 	public Atleta consultaAtleta(String nome) {
-		//for (Atleta aux : atletas) {//Atleta aux serve para comparar o AUX com o valor do ArrayList -
-		for (int i = 0; i < atletas.size(); i++) {
-			if (atletas.get(i).getNome().equals(nome)) {//So vai entrar neste if, se o Atleta tiver o mesmo nome recebido por parâmetro
-				return atletas.get(i);
+		for (Atleta aux : atletas) {//Atleta aux serve para comparar o AUX com o valor do ArrayList -
+			if (aux.getNome().equals(nome)) {//So vai entrar neste if, se o Atleta tiver o mesmo nome recebido por parâmetro
+				return aux;
 			}
 		}
 		return null;
 	}
 	public Atleta consultaAtleta(int numero) {
-		for (int i = 0; i < atletas.size(); i++) {
-			if (atletas.get(i).getNumero() == numero) {
-				return atletas.get(i);
+		for (Atleta aux: atletas) {
+			if (aux.getNumero() == numero){
+				return aux;
 			}
+
+		}
+		return null;
+	}
+	public ArrayList<Atleta> consultaAtletas(String pais){
+		ArrayList<Atleta> auxAtletas = new ArrayList<>();
+		if(!atletas.isEmpty()){
+			for (Atleta aux: atletas) {
+				if(aux.getPais().equals(pais)){
+					auxAtletas.add(aux);
+				}
+			}
+			return auxAtletas;
+		}
+		return null;
+	}
+	public ArrayList<Atleta> consultaAtletasPorTipo(int tipo) {
+		ArrayList<Atleta> auxAtletas = new ArrayList<>();
+		if(!atletas.isEmpty()) {
+			for (int i = 0; i < atletas.size(); i++) {
+				if (atletas.get(i).getMedalhas().get(i).getTipo() == tipo) {
+					auxAtletas.add(atletas.get(i));
+				}
+			}
+			return auxAtletas;
 		}
 		return null;
 	}
 }
+
+//	public ArrayList<Atleta> consultaAtletas(String pais) {
+//		ArrayList<Atleta> auxAtletas = new ArrayList<>();
+//		if(!atletas.isEmpty()) { //Verificando se o ArrayList de medalhas não esta vazio.
+//			for (int i =0; i<atletas.size(); i++){
+//				if (atletas.get(i).getPais().equals(pais)){
+//					auxAtletas.add(atletas.get(i)); //Todas as medalhas que forem iguais a
+//				}									 //modalidade passada por parametro, serão add a
+//			}										//este ArrayList auxiliar do tipo Medalhas.
+//		}
+//		return null;
+//	}
 
