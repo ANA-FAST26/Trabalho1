@@ -182,7 +182,7 @@ public class ACMESports {
 	}
 
 	//Método 9 mostra atleta pesquisando por modalidade.
-	private void mostraAtletaPorModalidade() {
+	private void mostraAtletaPorModalidade(){
 		String modalidade;
 		ArrayList <Atleta> auxAtletas;
 		ArrayList <Medalha> auxMedalhas;
