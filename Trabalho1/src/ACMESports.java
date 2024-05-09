@@ -42,7 +42,7 @@ public class ACMESports {
 		mostraAtletaPorPais(); //7
 		mostraAtletaPorMedalha(); //8
 		mostraAtletaPorModalidade(); //9
-//		mostraAtletaComMaisMedalhas(); //10
+		mostraAtletaComMaisMedalhas(); //10
 	}
 
 	// Método 1 para cadastrar um atleta.
@@ -191,7 +191,7 @@ public class ACMESports {
 		auxMedalhas = medalheiro.consultaMedalha(modalidade);
 		if(auxAtletas.isEmpty() && auxMedalhas.isEmpty()){
 			System.out.println("9:Modalidade não encontrada.");
-		}else if(!auxMedalhas.isEmpty()){
+		}else if(auxAtletas.isEmpty()){
 			for(int i = 0; i< auxMedalhas.size(); i++) {
 				System.out.println("9:" + modalidade + "," + auxMedalhas.get(i).getTipo() + ",Sem atletas com medalha.");
 			}
@@ -199,6 +199,23 @@ public class ACMESports {
 			for (int i = 0; i < auxAtletas.size(); i++) {
 				System.out.println("9:" + modalidade + "," + auxMedalhas.get(i).getTipo() + "," + auxAtletas.get(i).getNumero() + "," + auxAtletas.get(i).getNome() + "," + auxAtletas.get(i).getPais());
 			}
+		}
+	}
+
+	private void mostraAtletaComMaisMedalhas() {
+		ArrayList<Atleta> atletasAux = plantel.getAtletas();
+		int countMedalhas = 0;
+		Atleta aux = null;
+		for (Atleta atleta : atletasAux) {
+			if (atleta.consultaQuantidadeMedalhas()>countMedalhas){
+				countMedalhas = atleta.consultaQuantidadeMedalhas();
+				aux = atleta;
+			}
+		}
+		if(countMedalhas == 0){
+			System.out.println("10:Nenhum atleta com medalha.");
+		}else {
+			System.out.println("10:" + aux.getNumero() + "," + aux.getNome() + "," + aux.getPais() + "," + aux.defineCategoria(1) + ":" + aux.quantidadeCadaTipo(1) + "," + aux.defineCategoria(2) + ":" + aux.quantidadeCadaTipo(2) + "," + aux.defineCategoria(3) + ":" + aux.quantidadeCadaTipo(3));
 		}
 	}
 }

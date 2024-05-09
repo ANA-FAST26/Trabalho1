@@ -61,6 +61,10 @@ public class Plantel {
 		return null;
 	}
 
+	public ArrayList<Atleta> getAtletas() {
+		return atletas;
+	}
+
 	public ArrayList<Atleta> consultaAtletasPorModalidade(String modalidade) {
 		ArrayList<Atleta> auxAtletas = new ArrayList<>();
 		if(!atletas.isEmpty()) { //Verificando se o ArrayList de medalhas não esta vazio.

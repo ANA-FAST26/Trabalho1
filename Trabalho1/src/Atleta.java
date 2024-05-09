@@ -39,5 +39,31 @@ public class Atleta {
 		return medalhas.size();
 	}
 
+	public int quantidadeCadaTipo(int tipo){
+		int qtdMedalhas = 0;
+		for (Medalha medalha: medalhas) {
+			if (medalha.getTipo() == tipo){
+				qtdMedalhas++;
+			}
+		}
+		return qtdMedalhas;
+	}
 
+	public String defineCategoria(int tipo){
+		String categoria;
+		switch (tipo){
+			case 1:
+				categoria = "Ouro";
+				break;
+			case 2:
+				categoria = "Prata";
+				break;
+			case 3:
+				categoria = "Bronze";
+				break;
+			default:
+				categoria = "Categoria inválida";
+		}
+		return categoria;
+	}
 }
