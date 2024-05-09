@@ -19,7 +19,6 @@ public class Medalha {
 		this.modalidade = modalidade;
 		atletas = new ArrayList<Atleta>(10);
 	}
-
 	public int getCodigo() {
 		return codigo;
 	}
@@ -36,5 +35,7 @@ public class Medalha {
 	public void adicionaAtleta(Atleta atleta) {
 		atletas.add(atleta);
 	}
+
+
 
 }
